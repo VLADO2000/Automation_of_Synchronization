@@ -1,6 +1,6 @@
 import time
 from argparseSetUp import parse_arguments
-from syncApp import *
+from syncApp import setup_logging, compare_folders, synchronize_folders
 
 
 def main():
