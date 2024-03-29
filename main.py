@@ -2,6 +2,7 @@ import time
 from argparseSetUp import parse_arguments
 from syncApp import *
 
+
 def main():
     #retrieve console output as a set of inctructions
     args = parse_arguments()
