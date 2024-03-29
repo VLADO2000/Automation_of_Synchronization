@@ -1,5 +1,5 @@
 import time
-from parseSetUp import parse_arguments
+from argparseSetUp import parse_arguments
 from syncApp import *
 
 def main():

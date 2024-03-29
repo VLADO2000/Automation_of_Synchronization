@@ -71,13 +71,13 @@ def compare_folders(source, replica):
             source_dir_path = os.path.join(source_root, dir_name)
             replica_dir_path = os.path.join(root, dir_name)
             if not os.path.exists(source_dir_path):
-                actions.append(('remove_dir', replica_dir_path))
+                actions.append(('remove_dir', '', replica_dir_path))
         
         for file_name in files:
             source_file_path = os.path.join(source_root, file_name)
             replica_file_path = os.path.join(root, file_name)
             if not os.path.exists(source_file_path):
-                actions.append(("remove_file", replica_file_path))
+                actions.append(("remove_file", '', replica_file_path))
     return actions
         
 
@@ -87,10 +87,10 @@ def synchronize_folders(actions):
             case 'copy', source, replica:
                 logging.info(f"Copying {source} to {replica}...")
                 shutil.copy2(source, replica)
-            case 'remove_file', replica:
+            case 'remove_file', _, replica:
                 logging.info(f"Removing {replica} file")
                 os.remove(replica)
-            case 'remove_dir', replica:
+            case 'remove_dir', _, replica:
                 logging.info(f"Removing {replica} directory")
                 shutil.rmtree(replica)
             case _:
