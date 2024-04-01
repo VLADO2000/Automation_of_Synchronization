@@ -51,9 +51,9 @@ def compare_folders(source, replica):
                 os.makedirs(replica_dir_path)
             except FileExistsError:
                 logging.info(f"Creation of directory {replica_dir_path} has not happened this time due \
-                             to modification of its content")
+                             to its existance")
             else:
-                logging.info(f"Creation of directory {replica_dir_path} on replica folder")
+                logging.info(f"Replica folder {replica_dir_path} created")
         #Files action construcor
         for file_name in files:
             source_file_path = os.path.join(root, file_name)
@@ -80,7 +80,6 @@ def compare_folders(source, replica):
                 actions.append(("remove_file", '', replica_file_path))
     return actions
         
-
 def synchronize_folders(actions):
     for action, source, replica in actions:
         match action, source, replica:
