@@ -11,11 +11,6 @@ Periodic Sync: Executes at specified intervals to uphold synchronization in seco
 Installation
 To acquire the script, clone the repository:
 
-bash
-Copy code
-git clone https://github.com/MahmoudHussein90/Synchronizes-two-folders.git
-Navigate to the directory of the script.
-
 Usage
 Execute the script from the command line: python3 main.py <source_folder> <replica_folder> --interval --log <log_file>
 
