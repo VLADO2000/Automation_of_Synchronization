@@ -14,7 +14,7 @@ Periodic Sync: Executes at specified intervals to uphold synchronization in seco
 
 Usage
 
-Execute the script from the command line: python3 main.py <source_folder> <replica_folder> --interval --log <log_file>
+Execute the script from the command line: python3 main.py -s /Users/username/Desktop/Source_folder -r /Users/username/Desktop/Replica_folder -i 40 -l /Users/username/Desktop/Test/log.log
 
 <source_folder>: Path of the source folder.
 <replica_folder>: Path of the replica folder.
@@ -34,6 +34,12 @@ Testing
 To ensure reliability, the script has been thoroughly tested using pytest, unittest, mock, and patch libraries.
 
 
+
+
+
+
+P.S.
+I am also expereminting with the asynchronous version, but i guess to implement it with multithreading is the best idea as asyncio seems to me not suitable for task like that. 
 
 
 
